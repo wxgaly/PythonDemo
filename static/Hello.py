@@ -1,9 +1,9 @@
 # list 有序链表（可修改元素）
-names = ["zhangsan", 1, "wangwu"]
-a = ["a", 2.0]
+# names = ["zhangsan", 1, "wangwu"]
+# a = ["a", 2.0]
 
-names.append(a)
-names.insert(1, "hah")
+# names.append(a)
+# names.insert(1, "hah")
 
 # print("before names: ", names)
 
@@ -11,7 +11,7 @@ names.insert(1, "hah")
 # print("after names: ", names)
 
 # tuple 有序元组（不可修改元素）
-classes = {"class one", "class two"}
+# classes = {"class one", "class two"}
 
 # s = input('birth: ')
 # birth = int(s)
@@ -42,5 +42,29 @@ classes = {"class one", "class two"}
 # print(d["a"])
 
 # set 不存在重复的元素
-s = set([1, 2, 2, 3, 3])
-print(s)
+# s = set([1, 2, 2, 3, 3])
+# print(s)
+
+# 调用函数
+
+# def max2(x, y):
+#     if x >= y:
+#         return x
+#     else:
+#         return y
+#
+#
+# print(max2(1, 2))
+
+import math
+
+
+def move(x, y, step, angle=0):
+    nx = x + step * math.cos(angle)
+    ny = y - step * math.sin(angle)
+    return nx, ny
+
+
+x, y = move(100, 100, 60, math.pi / 6)
+
+print(x, y)
