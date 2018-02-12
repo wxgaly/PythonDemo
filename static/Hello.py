@@ -59,12 +59,61 @@
 import math
 
 
-def move(x, y, step, angle=0):
-    nx = x + step * math.cos(angle)
-    ny = y - step * math.sin(angle)
-    return nx, ny
+# def move(x, y, step, angle=0):
+#     nx = x + step * math.cos(angle)
+#     ny = y - step * math.sin(angle)
+#     return nx, ny
+#
+#
+# x, y = move(100, 100, 60, math.pi / 6)
+#
+# print(x, y)
+
+#
+# def square(a):
+#     return a * a
+#
+#
+# def quadratic(a, b, c):
+#     x = (-b + math.sqrt(square(b) - 4 * a * c)) / 2 * a
+#     y = (-b - math.sqrt(square(b) - 4 * a * c)) / 2 * a
+#     return x, y
+#
+#
+# x, y = quadratic(3, 4, -5)
+#
+# print(x, y)
+
+# 函数默认参数
+# def power(x, n=2):
+#     s = 1
+#     while n > 0:
+#         n -= 1
+#         s *= x
+#     return s
+#
+#
+# print(power(5))
+# print(power(5, 3))
+# print(power(5, n=4))
+
+# 可变参数，即将参数作为list或者tuple传入
+
+def calc(numbers):
+    s = 0
+    for n in numbers:
+        s += n
+    return s
+
+def calc1(*numbers):
+    s = 0
+    for n in numbers:
+        s += n
+    return s
 
 
-x, y = move(100, 100, 60, math.pi / 6)
+print(calc([1, 2, 3]))
 
-print(x, y)
+
+nums = {1, 2, 5}
+print(calc1(*nums))
