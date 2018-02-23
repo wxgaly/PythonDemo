@@ -56,7 +56,7 @@
 #
 # print(max2(1, 2))
 
-import math
+# import math
 
 # def move(x, y, step, angle=0):
 #     nx = x + step * math.cos(angle)
@@ -208,3 +208,113 @@ import math
 # from collections import Iterator
 #
 # print(isinstance((x for x in range(10)), Iterator))
+
+
+# 函数式编程
+
+# def add(x, y, f):
+#     return f(x) + f(y)
+#
+#
+# print(add(1, -1, abs))
+
+# map与reduce
+
+# print(list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9])))
+
+# from functools import reduce
+#
+# print(reduce(lambda x, y: x + y, [1, 2, 3]))
+
+# filter
+
+# print(list(filter(lambda x: x % 2 == 1, range(10))))
+
+# sorted
+
+# print(sorted([1, 3, -6, -4, -10, 0], key=abs, reverse=True))
+
+
+# 返回函数
+#
+# def lazy_sum(*args):
+#     def sum():
+#         ax = 0
+#         for n in args:
+#             ax = ax + n
+#         return ax
+#
+#     return sum  # 返回闭包
+#
+#
+# f = lazy_sum(1, 2, 3, 4, 5)
+# print(f())
+
+# 匿名函数 即lambda表达式
+
+# print(list(filter(lambda x: x % 2 == 1, range(10))))
+
+
+# 装饰器 对于任意函数，都可以通过类似func(*args, **kw)的形式调用它，无论它的参数是如何定义的。
+
+# import functools
+#
+#
+# def log(func):
+#     @functools.wraps(func)
+#     def wrapper(*args, **kw):
+#         print('call %s():' % func.__name__)
+#         return func(*args, **kw)
+#
+#     return wrapper
+#
+#
+# @log
+# def now():
+#     return '2018-2-28'
+#
+#
+# f = now
+#
+# print(f())
+#
+# print(log(lambda x: x + 1)(1))
+# print(f.__name__)
+
+
+# 偏函数 简单总结functools.partial的作用就是，把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单
+
+# import functools
+#
+# int2 = functools.partial(int, base=2)
+#
+# print(int2('1000000'))
+
+
+# 模块
+
+"""
+作用域
+在一个模块中，我们可能会定义很多函数和变量，但有的函数和变量我们希望给别人使用，
+有的函数和变量我们希望仅仅在模块内部使用。在Python中，是通过_前缀来实现的。
+"""
+
+""" a test module """
+
+# __author__ = 'Michael Liao'
+#
+# import sys
+#
+#
+# def test():
+#     args = sys.argv
+#     if len(args) == 1:
+#         print('Hello, world!')
+#     elif len(args) == 2:
+#         print('Hello, %s!' % args[1])
+#     else:
+#         print('Too many arguments!')
+#
+#
+# if __name__ == '__main__':
+#     test()
