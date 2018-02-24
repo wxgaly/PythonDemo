@@ -52,31 +52,31 @@ __author__ = 'WXGALY'
 # 使用__slots__去限制绑定属性
 
 
-class Student(object):
-    # __slots__ = ('name', 'age')  # 用tuple定义允许绑定的属性名称
-
-    @property
-    def birth(self):
-        return self._birth
-
-    @birth.setter
-    def birth(self, value):
-        self._birth = value
-
-    @property
-    def age(self):
-        return 2018 - self._birth
-
-    def __str__(self):
-        return 'Student object (_birth: %s)' % self._birth
-
-    __repr__ = __str__
-
-
-stu = Student()
-stu.birth = 1994
-
-print(stu)
+# class Student(object):
+#     # __slots__ = ('name', 'age')  # 用tuple定义允许绑定的属性名称
+#
+#     @property
+#     def birth(self):
+#         return self._birth
+#
+#     @birth.setter
+#     def birth(self, value):
+#         self._birth = value
+#
+#     @property
+#     def age(self):
+#         return 2018 - self._birth
+#
+#     def __str__(self):
+#         return 'Student object (_birth: %s)' % self._birth
+#
+#     __repr__ = __str__
+#
+#
+# stu = Student()
+# stu.birth = 1994
+#
+# print(stu)
 
 # 枚举类型
 
