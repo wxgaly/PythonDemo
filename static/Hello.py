@@ -117,6 +117,18 @@
 # nums = {1, 2, 5}
 # print(calc1(*nums))
 
+# 命名关键字
+def person(name, age, **kw):
+    if 'city' in kw:
+        # 有city参数
+        pass
+    if 'job' in kw:
+        # 有job参数
+        pass
+    print('name:', name, 'age:', age, 'other:', kw)
+
+person('Jack', 24, city='Beijing', addr='Chaoyang', zipcode=123456)
+
 # 递归函数
 
 # def fact(n):
@@ -253,6 +265,24 @@
 # 匿名函数 即lambda表达式
 
 # print(list(filter(lambda x: x % 2 == 1, range(10))))
+# def calc(numbers):
+#     s = 0
+#     for n in numbers:
+#         s += n
+#     return s
+#
+# def calc1(*numbers):
+#     s = 0
+#     for n in numbers:
+#         s += n
+#     return s
+#
+#
+# print(calc([1, 2, 3]))
+#
+#
+# nums = {1, 2, 5}
+# print(calc1(*nums))
 
 
 # 装饰器 对于任意函数，都可以通过类似func(*args, **kw)的形式调用它，无论它的参数是如何定义的。
