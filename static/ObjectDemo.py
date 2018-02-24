@@ -102,3 +102,6 @@ class Weekday(Enum):
 day1 = Weekday.Sun
 
 print(day1)
+
+
+
