@@ -112,3 +112,4 @@ def dict2student(d):
 stu = json.loads(jsonStr, object_hook=dict2student)
 
 print(stu.name)
+
