@@ -27,7 +27,7 @@ msg = MIMEText('Dear All: 大家请注意', 'plain', 'utf-8')
 # 输入SMTP服务器地址:
 # smtp_server = input('SMTP server: ') # smtp.163.com smtp.126.com
 from_addr = "nova_wangxuguang@126.com"
-password = "wxg199425"
+password = "******"
 # to_addr = "962831870@qq.com"
 to_addr = from_addr
 smtp_server = "smtp.126.com"
