@@ -26,16 +26,15 @@ msg = MIMEText('Dear All: 大家请注意', 'plain', 'utf-8')
 # to_addr = input('To: ')
 # 输入SMTP服务器地址:
 # smtp_server = input('SMTP server: ') # smtp.163.com smtp.126.com
-from_addr = "nova_wangxuguang@126.com"
+from_addr = "*****@126.com"
 password = "******"
-# to_addr = "962831870@qq.com"
 to_addr = from_addr
 smtp_server = "smtp.126.com"
 
 import smtplib
 
 
-# server = smtplib.SMTP(smtp_server, 25)  # SMTP协议默认端口是25 nova_wangxuguang@126.com wangxuguang@novastar.tech
+# server = smtplib.SMTP(smtp_server, 25)  # SMTP协议默认端口是25
 # # server = smtplib.SMTP_SSL(smtp_server, 465)  # qq端口465
 # server.set_debuglevel(1)
 # server.login(from_addr, password)

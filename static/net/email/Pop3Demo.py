@@ -11,7 +11,7 @@ from email.header import decode_header
 from email.utils import parseaddr
 
 # 输入邮件地址, 口令和POP3服务器地址:
-email = "nova_wangxuguang@126.com"
+email = "*****@126.com"
 password = "******"
 pop3_server = "pop.126.com"  # 端口110
 
