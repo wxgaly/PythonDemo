@@ -4,7 +4,7 @@
 
 __author__ = "WXGALY"
 
-import logging;
+import logging
 
 logging.basicConfig(level=logging.INFO)
 
