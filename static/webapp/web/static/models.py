@@ -53,14 +53,17 @@ class Comment(Model):
     created_at = FloatField(default=time.time)
 
 
-# @asyncio.coroutine
-# def test(loop):
+# async def test(loop):
 #     # 创建连接池
 #     db_dict = {'user': 'root', 'password': '123456', 'db': 'wxg'}
-#     yield from create_pool(loop=loop, **db_dict)
+#     await create_pool(loop=loop, **db_dict)
 #     u = User(name='Test', email='test@example.com', passwd='12345', image='about:blank')
-#     yield from u.save()
-#     yield from close_pool()
+#     u1 = User(name='aaa', email='aaaa@example.com', passwd='5555', image='about:blank')
+#     u2 = User(name='bbb', email='bbb@example.com', passwd='54545', image='about:blank')
+#     await u.save()
+#     await u1.save()
+#     await u2.save()
+#     await close_pool()
 #
 #
 # loop = asyncio.get_event_loop()

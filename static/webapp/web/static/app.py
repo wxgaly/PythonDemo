@@ -47,7 +47,7 @@ async def logger_factory(app, handler):
     async def logger(request):
         logging.info('Request: %s %s' % (request.method, request.path))
         # await asyncio.sleep(0.3)
-        return (await handler(request))
+        return await handler(request)
 
     return logger
 
@@ -121,8 +121,7 @@ def datetime_filter(t):
     return u'%s年%s月%s日' % (dt.year, dt.month, dt.day)
 
 
-@asyncio.coroutine
-def init(loop):
+async def init(loop):
     # app = web.Application(loop=loop)
     # app.router.add_route('GET', '/', index)
     app = web.Application(loop=loop, middlewares=[
@@ -131,8 +130,8 @@ def init(loop):
     init_jinja2(app, filters=dict(datetime=datetime_filter))
     add_routes(app, 'handlers')
     add_static(app)
-    # srv = yield from loop.create_server(app.make_handler(), '127.0.0.1', 9000)
-    srv = yield from loop.create_server(app.make_handler(), '192.168.31.229', 9000)
+    srv = await loop.create_server(app.make_handler(), '127.0.0.1', 9000)
+    # srv = await loop.create_server(app.make_handler(), '192.168.31.229', 9000)
     logging.info('server started at http://127.0.0.1:9000...')
     return srv
 
