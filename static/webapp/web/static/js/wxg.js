@@ -1,3 +1,7 @@
+// wxg.js
+
+// patch for lower-version IE:
+
 if (! window.console) {
     window.console = {
         log: function() {},
